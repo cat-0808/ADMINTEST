@@ -25,7 +25,7 @@ CSRF_TRUSTED_ORIGINS = ['https://fsy6t07s-77timn90-cvg9mpn4zb9x.ac4-preview.mars
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fsy6t07s-77timn90-cvg9mpn4zb9x.ac4-preview.marscode.dev','ehd97n64-ph5bbp1s-nnc1jrvonyv2.ac4-preview.marscode.dev','4khki3jl-tulvwnyj-j1g1wjlrcejq.ac4-preview.marscode.dev','k4cfvov1-ynoxm6xv-fd04fuoxdmj3.ac4-preview.marscode.dev']
+ALLOWED_HOSTS = ['26kh61my-iwo5epjt-6ubiwyd5cfuw.ac4-preview.marscode.dev','k0xewdje-rxnqet34-wh2sxzlw68i4.ac4-preview.marscode.dev','k0xewdje-rxnqet34-wh2sxzlw68i4.ac4-preview.marscode.dev','81xrjgnn-bkij1h8h-98ijokzgvwt3.ac4-preview.marscode.dev','5vvi5zci-yheskz7x-zos98ak2njka.ac4-preview.marscode.dev','9isry97r-czap1z0v-z1il4gylu5l6.ac4-preview.marscode.dev','3wa0zv35-79etjma2-rsj3xv41id40.ac4-preview.marscode.dev','5yp5740n-1uggai5k-p7qsls3rlucg.ac4-preview.marscode.dev','ijfkr1jm-4fnzv6i7-ys9v8cbn5w1i.ac4-preview.marscode.dev','86irlhsj-ho8a8ruy-x1f1rn23jsvu.ac4-preview.marscode.dev','localhost','http://127.0.0.1:8000/','vu6bcbwo-h7odt5pe-a4ii458sr3b.ac4-preview.marscode.dev']
 
 
 # Application definition

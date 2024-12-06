@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products</title>
+  <style>
+        .header {
+      background: linear-gradient(45deg, #FFD700, #FF4500);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 150px;
+      width: 150px;
+      margin-right: 1rem;
+    }
+    .nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  padding: 0.5rem 1rem;
+  background: #FFD700;
+  color: #000;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.nav-menu a:hover {
+  background: #FF4500;
+  color: #fff;
+}
+    .hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: url('https://via.placeholder.com/1920x1080.png?text=Kitchen+Background') no-repeat center center/cover;
+  color: #fff;
+  margin: 0;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for better text visibility */
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2; /* Ensures text is above the overlay */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+    .products {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      background-color: #FF6347;
+    }
+    .product-card {
+      background: #FFD700;
+      color: #000;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .product-card h2 {
+      margin: 1rem 0 0.5rem;
+    }
+    .cta {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(45deg, #FF4500, #FFD700);
+    }
+    .cta h2 {
+      margin: 0 0 1rem;
+    }
+    .cta button {
+      background: #FF6347;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .cta button:hover {
+      background: #FF4500;
+    }
+    .footer {
+      background-color: #FF6347;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .section img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+
+    .section-content {
+      flex: 1;
+    }
+
+    .section-content h2 {
+      color: #FF4500;
+      margin: 0 0 1rem;
+    }
+
+    .section-content p {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .section img {
+        margin: 0 0 1rem;
+      }
+    }
+  </style>
+    <header class="header">
+        <div class="logo">
+            <img src="https://i.ibb.co/ZY46BwN/image-removebg-preview.png" alt="image-removebg-preview"></a>
+          <h1>Tater Craze</h1>
+        </div>
+        <nav class="nav-menu">
+          <a href="{% url 'homepage' %}">Home</a>
+          <a href="{% url 'products' %}">Products</a>
+          <a href="{% url 'delivery' %}">Delivery</a>
+          <a href="{% url 'mission_vision' %}">Mission & Vision</a>
+          <a href="{% url 'feedback' %}">Feedback</a>
+        </nav>
+      </header>
+</head>
+<body>
+  <div class="container">
+    <!-- Tater Halos -->
+    <div class="section">
+      <img src="https://i.ytimg.com/vi/wUkNM2QeoBY/maxresdefault.jpg" alt="Tater Halos">
+      <div class="section-content">
+        <h2>Tater Halos</h2>
+        <h1>Pricing : 59.00Php</h1>
+        <h1>BUY ONE TAKE ONE</h1>
+        <p>Golden-brown and irresistibly crispy, Tater Halos are bite-sized potato rings perfectly seasoned to balance savory and salty flavors. Each ring is fried to perfection, offering a satisfying crunch with every bite. Whether dipped in your favorite sauce or enjoyed on their own, these delightful treats are sure to make your snack time heavenly.</p>
+      </div>
+    </div>
+
+    <!-- Tater Strips -->
+    <div class="section">
+      <img src="https://i.ytimg.com/vi/CYhYSoJrOLg/maxresdefault.jpg" alt="Tater Strips">
+      <div class="section-content">
+        <h2>Tater Strips</h2>
+        <h1>Pricing : 49.00Php</h1>
+        <h1>BUY ONE TAKE ONE</h1>
+        <p>Thin, crispy, and impossibly addicting, Tater Strips are the ultimate snack for potato lovers. Hand-sliced and cooked to golden perfection, these strips are seasoned with a special blend of spices for an explosion of flavor. Perfect for sharing or keeping all to yourself, they’re the ideal companion for any dip or drink.</p>
+      </div>
+    </div>
+
+    <!-- Lemon Honey Iced Tea -->
+    <div class="section">
+      <img src="https://images.squarespace-cdn.com/content/v1/5151f27ae4b07a39721a7e70/1495890895154-P1EO1FVOBCKF8T2IA64S/tc_tea-21.jpg?format=1500w" alt="Lemon Honey Iced Tea">
+      <div class="section-content">
+        <h2>Lemon Honey Iced Tea</h2>
+        <h1>Pricing : +20.00Php</h1>
+        <p>A refreshing twist on a classic, our Lemon Honey Iced Tea with Cucumber combines the zesty brightness of lemon with the natural sweetness of honey, enhanced by the cool, crisp taste of cucumber. This rejuvenating drink is perfectly balanced and lightly chilled, making it the ultimate thirst-quencher for any occasion.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -20,5 +20,9 @@ from appname import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage, name='homepage'),  # Root URL points to the homepage
+    path('', views.homepage, name='homepage'),
+    path('products/', views.products, name='products'),
+    path('delivery/', views.delivery, name='delivery'),
+    path('mission-vision/', views.mission_vision, name='mission_vision'),
+    path('feedback/', views.feedback, name='feedback'),  # Root URL points to the homepage
 ]

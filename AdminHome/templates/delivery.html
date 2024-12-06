@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tater Craze</title>
+  <title>Deliveries</title>
   <style>
+    /* Background Gradient */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      color: #fff;
+      background: linear-gradient(to right, #FFD700, #FF4500); /* Same gradient as homepage */
+      color: #333;
     }
     .header {
       background: linear-gradient(45deg, #FFD700, #FF4500);
@@ -140,56 +142,95 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+    /* Container for Deliveries Page */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      text-align: center;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #FF4500;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .delivery-logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .delivery-logos img {
+      width: 150px;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .delivery-logos img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
   </style>
 </head>
-</div>
 <body>
-  <header class="header">
-    <div class="logo">
-      <img src="https://i.ibb.co/ZY46BwN/image-removebg-preview.png" alt="image-removebg-preview"></a>
-      <h1>Tater Craze</h1>
-    </div>
-    <nav class="nav-menu">
-      <a href="{% url 'homepage' %}">Home</a>
-      <a href="{% url 'products' %}">Products</a>
-      <a href="{% url 'delivery' %}">Delivery</a>
-      <a href="{% url 'mission_vision' %}">Mission & Vision</a>
-      <a href="{% url 'feedback' %}">Feedback</a>
-    </nav>
-  </header>
-  <section class="hero" id="home">
-    <h1>Tater Craze</h1>
-    <p>The potato revolution you've been craving!</p>
-  </section>
-  <main>
-    <section class="products" id="products">
-      <div class="product-card">
-        <img src="https://i.ytimg.com/vi/wUkNM2QeoBY/maxresdefault.jpg" alt="Tater Halos">
-        <h2>Tater Halos</h2>
-        <p>Golden, crispy potato rings that are heaven on earth.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://i.ytimg.com/vi/CYhYSoJrOLg/maxresdefault.jpg" alt="Tater Strips">
-        <h2>Tater Strips</h2>
-        <p>Crunchy, savory potato strips perfect for every occasion.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://images.squarespace-cdn.com/content/v1/5151f27ae4b07a39721a7e70/1495890895154-P1EO1FVOBCKF8T2IA64S/tc_tea-21.jpg?format=1500w" alt="Lemon Honey Iced Tea">
-        <h2>Lemon Honey Iced Tea</h2>
-        <p>A refreshing blend of citrus and sweet honey, perfect with every bite.</p>
-      </div>
-    </section>
-    <section class="cta">
-      <div class="cta">
-        <h2>Order Your Favorite Snacks Now!</h2>
-        <a href="{% url 'delivery' %}">
-          <button>Order Now</button>
+    <header class="header">
+        <div class="logo">
+          <img src="https://i.ibb.co/ZY46BwN/image-removebg-preview.png" alt="image-removebg-preview"></a>
+          <h1>Tater Craze</h1>
+        </div>
+        <nav class="nav-menu">
+          <a href="{% url 'homepage' %}">Home</a>
+          <a href="{% url 'products' %}">Products</a>
+          <a href="{% url 'delivery' %}">Delivery</a>
+          <a href="{% url 'mission_vision' %}">Mission & Vision</a>
+          <a href="{% url 'feedback' %}">Feedback</a>
+        </nav>
+      </header>
+  <div class="container">
+    <h1>Deliveries</h1>
+    <p>We’ve partnered with your favorite delivery services for a seamless snacking experience!</p>
+    
+    <!-- Delivery Logos -->
+    <div class="delivery-logos">
+        <a href="https://www.grab.com/ph/food/" target="_blank" rel="noopener">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT40P369iKinLuuAAEbzW2bKntfeW_P_CwhWg&s" alt="Grab Food Logo">
+        </a>
+        <a href="https://www.foodpanda.ph/" target="_blank" rel="noopener">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJS-cuahTgEd6u2Ogash0JE4M4oj_ngQX_R8gX4fPYU4ehFn5BJzC23ZUgmBMREcXucEo" alt="Food Panda Logo">
+        </a>
+        <a href="https://www.lalamove.com/" target="_blank" rel="noopener">
+          <img src="https://play-lh.googleusercontent.com/mrfWRPGoIiKanAuZC7GDr-Tf8AF2W5G66priKTKhfl8ePjXUwQhgWZX4mn3aBs4lRS0" alt="Lalamove Logo">
+        </a>
+        <a href="https://angkas.com/" target="_blank" rel="noopener">
+          <img src="https://i.pinimg.com/736x/fc/2d/72/fc2d72d6894df5e79504c5be74d96ff2.jpg" alt="Angkas Logo">
         </a>
       </div>
-    </section>
-  </main>
-  <footer class="footer">
-    © 2024 Tater Craze. All rights reserved.
-  </footer>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2024 Tater Craze. All rights reserved.</p>
+  </div>
 </body>
 </html>

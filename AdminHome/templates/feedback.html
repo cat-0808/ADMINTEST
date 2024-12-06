@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    /* Background Gradient */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #FFD700, #FF4500);
+      color: #333;
+    }
+    .feedback-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; 
+  margin-bottom: 2rem; 
+}
+
+.feedback-header .logo {
+  width: 100px; /* Adjust logo size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.feedback-header h2 {
+  margin: 0;
+  font-size: 2rem; /* Adjust font size */
+  color: #FF4500; /* Match the theme */
+  text-align: center;
+}
+
+
+    /* Container for feedback form */
+    .container {
+      width: 80%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem; /* More padding */
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #FF4500;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .rating {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 1.5rem;
+    }
+
+    .rating img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .rating img:hover {
+      transform: scale(1.1);
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #FF4500;
+      color: #fff;
+      border: none;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #e03e00;
+    }
+    .header {
+      background: linear-gradient(45deg, #FFD700, #FF4500);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 150px;
+      width: 150px;
+      margin-right: 1rem;
+    }
+    .nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  padding: 0.5rem 1rem;
+  background: #FFD700;
+  color: #000;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.nav-menu a:hover {
+  background: #FF4500;
+  color: #fff;
+}
+    .hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: url('https://via.placeholder.com/1920x1080.png?text=Kitchen+Background') no-repeat center center/cover;
+  color: #fff;
+  margin: 0;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for better text visibility */
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2; /* Ensures text is above the overlay */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+    .products {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      background-color: #FF6347;
+    }
+    .product-card {
+      background: #FFD700;
+      color: #000;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .product-card h2 {
+      margin: 1rem 0 0.5rem;
+    }
+    .cta {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(45deg, #FF4500, #FFD700);
+    }
+    .cta h2 {
+      margin: 0 0 1rem;
+    }
+    .cta button {
+      background: #FF6347;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .cta button:hover {
+      background: #FF4500;
+    }
+    .footer {
+      background-color: #FF6347;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="https://i.ibb.co/ZY46BwN/image-removebg-preview.png" alt="image-removebg-preview"></a>
+          <h1>Tater Craze</h1>
+        </div>
+        <nav class="nav-menu">
+          <a href="{% url 'homepage' %}">Home</a>
+          <a href="{% url 'products' %}">Products</a>
+          <a href="{% url 'delivery' %}">Delivery</a>
+          <a href="{% url 'mission_vision' %}">Mission & Vision</a>
+          <a href="{% url 'feedback' %}">Feedback</a>
+        </nav>
+      </header>
+  <div class="container">
+    <div class="feedback-header">
+        <!-- Logo and Feedback Title -->
+        <img src="https://i.ibb.co/SV7Mm11/koharuXD.png" alt="koharuXD" class="logo">
+    <h2>Feedback Form</h2>
+    <form action="#" method="POST">
+      <!-- Name Input -->
+      
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <!-- Section Input -->
+      <div class="form-group">
+        <label for="section">Your Section:</label>
+        <input type="text" id="section" name="section" placeholder="Enter your section" required>
+      </div>
+
+      <!-- Feedback Input -->
+      <div class="form-group">
+        <label for="feedback">Your Feedback:</label>
+        <textarea id="feedback" name="feedback" placeholder="Write your feedback here" required></textarea>
+      </div>
+
+      <!-- Rating System (1 to 5 stars) -->
+      <div class="form-group">
+        <label for="rating">Rating:</label>
+        <div class="rating">
+          <img src="https://img.freepik.com/free-vector/3d-metal-star-isolated_1308-115283.jpg?w=360" alt="1 star" data-value="1">
+          <img src="https://img.freepik.com/free-vector/3d-metal-star-isolated_1308-115283.jpg?w=360" alt="2 stars" data-value="2">
+          <img src="https://img.freepik.com/free-vector/3d-metal-star-isolated_1308-115283.jpg?w=360" alt="3 stars" data-value="3">
+          <img src="https://img.freepik.com/free-vector/3d-metal-star-isolated_1308-115283.jpg?w=360" alt="4 stars" data-value="4">
+          <img src="https://img.freepik.com/free-vector/3d-metal-star-isolated_1308-115283.jpg?w=360" alt="5 stars" data-value="5">
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll('.rating img');
+    let ratingValue = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        ratingValue = star.getAttribute('data-value');
+        // Highlight the selected stars
+        stars.forEach(s => {
+          s.src = s.getAttribute('data-value') <= ratingValue
+            ? 'https://img.freepik.com/free-vector/3d-metal-star-isolated_1308-115283.jpg?w=360' 
+            : 'https://icons.veryicon.com/png/o/miscellaneous/johnny_icon/hollow-star.png';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
